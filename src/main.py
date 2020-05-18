@@ -17,7 +17,7 @@ bg = 25, 25, 25
 screen.fill(bg)
 
 # number of cells.
-nxC, nyC = 20, 50
+nxC, nyC = 50, 50
 
 # Dimension of the cell.
 dimCW = width / nxC
@@ -64,11 +64,11 @@ while True:
 				newGameState[x, y] = 1
 
 			# Rule #2: One cellular living with less than 2 or more than 3 living neighbors, "dead".
-			if gameState[x, y] == 1 and (n_neigh < 2 or n_neigh > 3):
-				newGameState[x, y] = 0  
+			elif gameState[x, y] == 1 and (n_neigh < 2 or n_neigh > 3):
+				newGameState[x, y] = 0 
 
 			# Create the polygon of each cell to draw.
- 			poly = [
+			poly = [
 				((x) 	* dimCW, y * dimCH),
 				((x+1)* dimCW, y * dimCH),
 				((x+1)* dimCW, (y+1) * dimCH),
